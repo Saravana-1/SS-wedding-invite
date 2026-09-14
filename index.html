@@ -313,7 +313,7 @@ section{
 }
 .heading{
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:7px;
 }
 .heading h2::after{
     content:"";
@@ -332,8 +332,81 @@ section{
     color:var(--gold);
     font-family:'Great Vibes', cursive;
 }
+.families{
+    padding:70px 0 0px;
+    text-align:center;
+}
+.families .heading h2::after{
+    display:none;
+}
+.families-blessing{
+    font-size:.75rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#f6f5f2;
+    margin-bottom:8px;
+    font-family:'Seriff';
+}
+.families-intro{
+    max-width:520px;
+    margin:0 auto 0px;
+    font-size:1rem;
+    line-height:1.7;
+    color:rgba(255,255,255,.9);
+}
+.family-block{
+    max-width:460px;
+    margin:0 auto;
+    padding:20px 24px;
+}
+.family-role{
+    font-size:.7rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:8px;
+}
+.family-name{
+    font-family:'Aguafina Script',cursive;
+    font-size:2.6rem;
+    font-weight:400;
+    color:var(--gold);
+    margin-bottom:12px;
+}
+.family-of{
+    font-style:italic;
+    font-size:.9rem;
+    color:#f9d97c;
+    margin-bottom:4px;
+}
+.family-parents{
+    font-size:1.05rem;
+    font-weight:600;
+    color:#fff;
+}
+.family-divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin:30px auto;
+    max-width:300px;
+}
+.family-divider::before,
+.family-divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:rgba(255,255,255,.25);
+}
+.family-divider span{
+    font-family:'Great Vibes',cursive;
+    font-size:2.2rem;
+    color:var(--gold);
+}
 .events{
-    padding:90px 0 80px;
+    padding:40px 0 80px;
 }
 .event-timeline{
     position:relative;
@@ -995,9 +1068,7 @@ section{
         <div class="door-scroll-hint" id="introSkipHint">Tap to skip</div>
     </div>
 
-    <audio id="bgMusic" preload="none">
-        <source src="music/Roja Roja.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="bgMusic" preload="none"></audio>
 
     <div class="slideshow">
     <div class="slide active"></div>
@@ -1035,6 +1106,12 @@ section{
         <img src="Images/temple-bg-edited.webp" alt="SaravanaKumar and Sivashankari" fetchpriority="high" decoding="async">
     </div>
 
+    <h2>A sacred promise,</h2>
+    <h2>A beautiful beginning,</h2>
+    <h2>A lifetime together...</h2>
+
+    
+
     <div class="ambaari">
         <img src="Images/ambaari.webp" alt="SaravanaKumar and Sivashankari" decoding="async">
     </div>
@@ -1064,6 +1141,30 @@ section{
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="families animate">
+    <div class="heading">
+        <p class="families-blessing">Under the blessings of those we love, we begin our forever!</p>
+        <!-- <h2>Our Families</h2> -->
+    </div>
+    <p class="families-intro"></p>
+
+    <div class="family-block">
+        <p class="family-role">The Groom</p>
+        <h3 class="family-name">SaravanaKumar</h3>
+        <p class="family-of">Son of</p>
+        <p class="family-parents">Mr. Sengodan &amp; Mrs. Amudha</p>
+    </div>
+
+    <div class="family-divider"><span>And</span></div>
+
+    <div class="family-block">
+        <p class="family-role">The Bride</p>
+        <h3 class="family-name">Sivashankari</h3>
+        <p class="family-of">Daughter of</p>
+        <p class="family-parents">Mr. Murugesan &amp; Mrs. Punitha</p>
     </div>
 </section>
 
@@ -1608,6 +1709,14 @@ document.getElementById("doorOverlay").addEventListener("click", () => {
 
 const bgMusic = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
+
+// Pick one of the two wedding songs at random on every page load/refresh.
+const songPlaylist = [
+    "music/Roja Roja.mp3",
+    "music/alternative song 2.mp3"
+];
+const chosenSong = songPlaylist[Math.floor(Math.random() * songPlaylist.length)];
+bgMusic.src = chosenSong;
 
 let musicStarted = false;
 let userPaused = false; // true only when the visitor explicitly hits pause
