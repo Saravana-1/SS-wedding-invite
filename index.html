@@ -1,21 +1,64 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="Images/ss-logo-whitebg.png">
 <title>Sivashankari ❤️ SaravanaKumar | SS Wedding Invitation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;700&family=Great+Vibes&family=Aguafina+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Great+Vibes&family=Marcellus&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Phosphor Icons (light + fill weights) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
 
 <style>
 :root{
-    --maroon:#7a0c20;
-    --gold:#d4af37;
-    --green:#124734;
-    --cream:#fff9f0;
-    --card:rgba(255,255,255,0.12);
+    /* Grounds */
+    --plum:#120b13;
+    --maroon-mid:#2a1020;
+    --wine:#5a2238;
+    --rose-bloom:rgba(154,43,74,.35);
+    --red:#b11151;
+
+    /* Gold */
+    --gold:#e7c87a;
+    --gold-light:#fbf0cf;
+    --gold-lighter:#fdf6e4;
+    --gold-deep:#b0803a;
+    --gold-deep-2:#b98a3e;
+
+    /* Ink */
+    --cream:#f3e7c8;
+    --cream-2:#f0e4c6;
+    --ink:#e9e9ed;
+    --ink-muted:rgba(233,233,237,.72);
+    --ink-soft:rgba(233,233,237,.55);
+
+    /* Accent */
+    --blurple:#9184d9;
+    --blurple-light:#b8aee8;
+
+    /* Glass */
+    --glass:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.022));
+    --glass-edge:rgba(231,200,122,.20);
+    --glass-edge-strong:rgba(231,200,122,.42);
+
+    /* Name gradient */
+    --gold-text:linear-gradient(180deg,#fdf6e4 0%,#e7c87a 50%,#b0803a 100%);
+
+    /* Legacy names kept so nothing breaks */
+    --maroon:var(--wine);
+    --green:var(--maroon-mid);
+    --card:rgba(255,255,255,.09);
+
+    /* Fonts */
+    --font-display:'Cormorant Garamond',serif;
+    --font-title:'Marcellus',serif;
+    --font-ui:'Jost',sans-serif;
+    --font-script:'Great Vibes',cursive;
 }
 *{
     margin:0;
@@ -27,20 +70,27 @@ html{
 }
 body{
     background:
-        radial-gradient(circle at top,#a30d2c 0%,#5d0718 45%,#29040b 100%);
-    color:white;
+        radial-gradient(ellipse at 50% -10%,var(--rose-bloom) 0%,transparent 55%),
+        radial-gradient(circle at top,var(--wine) 0%,var(--maroon-mid) 45%,var(--plum) 100%);
+    background-color:var(--plum);
+    color:var(--ink);
     overflow-x:hidden;
-    font-family:'DM Sans',sans-serif;
+    font-family:var(--font-ui);
+    font-weight:300;
 }
 h1,h2,h3{
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-display);
+    color:var(--cream);
+}
+.ph-light,.ph-fill{
+    vertical-align:-0.12em;
 }
 .progress{
     position:fixed;
     top:0;
     left:0;
     height:5px;
-    background:linear-gradient(90deg,var(--gold),#ffe28a);
+    background:linear-gradient(90deg,var(--gold-deep),var(--gold),var(--gold-light));
     width:0%;
     z-index:9999;
 }
@@ -53,17 +103,16 @@ h1,h2,h3{
 }
 .petal{
     position:absolute;
-    color:#ffd86b;
+    color:var(--gold);
     opacity:.8;
     animation:fall linear infinite;
 }
+.petal.violet{
+    color:var(--blurple-light);
+}
 @keyframes fall{
-    from{
-        transform:translateY(-120px) rotate(0deg);
-    }
-    to{
-        transform:translateY(120vh) rotate(360deg);
-    }
+    from{ transform:translateY(-120px) rotate(0deg); }
+    to{ transform:translateY(120vh) rotate(360deg); }
 }
 .music-btn{
     position:fixed;
@@ -73,12 +122,10 @@ h1,h2,h3{
     height:56px;
     padding:12px;
     border-radius:50%;
-    border:2px solid rgba(212,175,55,.75);
-    background-color:#2c0812;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23d4af37' d='M9 3v10.55A4 4 0 1 0 11 17V7h6V3H9z'/%3E%3C/svg%3E");
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:46%;
+    border:2px solid var(--glass-edge-strong);
+    background-color:var(--maroon-mid);
+    color:var(--gold);
+    font-size:24px;
     box-shadow:0 6px 16px rgba(0,0,0,.45);
     cursor:pointer;
     z-index:999;
@@ -97,7 +144,7 @@ h1,h2,h3{
 }
 @keyframes musicPulse{
     0%,100%{ box-shadow:0 6px 16px rgba(0,0,0,.45); }
-    50%{ box-shadow:0 6px 22px rgba(212,175,55,.65); }
+    50%{ box-shadow:0 6px 22px rgba(231,200,122,.6); }
 }
 .tap-hint{
     position:fixed;
@@ -106,12 +153,13 @@ h1,h2,h3{
     max-width:190px;
     padding:10px 14px;
     border-radius:14px;
-    background:rgba(44,8,18,.94);
-    border:1px solid rgba(212,175,55,.6);
-    color:#f9d97c;
-    font-family:'DM Sans',sans-serif;
+    background:rgba(42,16,32,.94);
+    border:1px solid var(--glass-edge-strong);
+    color:var(--cream);
+    font-family:var(--font-ui);
     font-size:.8rem;
-    font-weight:500;
+    font-weight:400;
+    letter-spacing:.04em;
     text-align:center;
     line-height:1.4;
     box-shadow:0 8px 20px rgba(0,0,0,.4);
@@ -130,7 +178,7 @@ h1,h2,h3{
     height:0;
     border-left:6px solid transparent;
     border-right:6px solid transparent;
-    border-bottom:6px solid rgba(44,8,18,.94);
+    border-bottom:6px solid rgba(42,16,32,.94);
 }
 .tap-hint.show{
     opacity:1;
@@ -140,7 +188,7 @@ h1,h2,h3{
 }
 @keyframes tapHintPulse{
     0%,100%{ box-shadow:0 8px 20px rgba(0,0,0,.4); }
-    50%{ box-shadow:0 8px 26px rgba(212,175,55,.55); }
+    50%{ box-shadow:0 8px 26px rgba(231,200,122,.5); }
 }
 .venue-qr{
     width:160px;
@@ -158,15 +206,15 @@ h1,h2,h3{
     max-width:600px;
     margin:auto;
     text-align:center;
-    background:rgba(255,255,255,.08);
+    background:var(--glass);
     backdrop-filter:blur(15px);
     border-radius:25px;
     padding:35px;
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid var(--glass-edge);
 }
 .venue-section h2{
-    font-family:'DM Sans', sans-serif;
-    font-weight:600;
+    font-family:var(--font-title);
+    font-weight:400;
     font-size:1.4rem;
     color:var(--gold);
     margin-bottom:15px;
@@ -180,6 +228,21 @@ h1,h2,h3{
     height:1.1em;
     flex-shrink:0;
     display:inline-block;
+}
+.map-btn{
+    font-family:var(--font-ui);
+    font-size:.8rem;
+    font-weight:500;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--gold);
+    text-decoration:none;
+    border-bottom:1px solid var(--glass-edge-strong);
+    padding-bottom:3px;
+    transition:color .3s ease;
+}
+.map-btn:hover{
+    color:var(--gold-light);
 }
 section{
     width:min(1200px,92%);
@@ -195,27 +258,36 @@ section{
     align-items:center;
     text-align:center;
 }
+.hero h2{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:300;
+    font-size:clamp(17px,2.2vw,25px);
+    color:var(--cream-2);
+}
 .rangoli{
     font-size:55px;
     margin-bottom:20px;
     animation:float 4s ease-in-out infinite;
 }
 @keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-12px);
-    }
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-12px); }
 }
 .hero h1{
-    font-family:'Great Vibes', cursive;
-    font-size:6rem;
-    font-weight:400;
-    color:#fff;
+    font-family:var(--font-display);
+    font-style:italic;
+    font-size:clamp(44px,8vw,88px);
+    font-weight:300;
+    line-height:1.1;
+    background:var(--gold-text);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 .hero .amp{
     color:var(--gold);
+    -webkit-text-fill-color:var(--gold);
 }
 .hero p{
     margin-top:15px;
@@ -224,14 +296,16 @@ section{
 .date-card{
     margin-top:30px;
     padding:18px 35px;
-    border:1px solid rgba(255,255,255,.25);
+    border:1px solid var(--glass-edge);
     border-radius:20px;
-    background:rgba(255,255,255,.08);
+    background:var(--glass);
     backdrop-filter:blur(12px);
 }
 .date-scratch-title{
     color:var(--gold);
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:400;
     font-size:1.35rem;
     letter-spacing:.5px;
     margin-bottom:16px;
@@ -252,11 +326,12 @@ section{
     min-width:0;
 }
 .date-scratch-label{
-    font-size:.75rem;
-    letter-spacing:2px;
+    font-family:var(--font-ui);
+    font-size:.7rem;
+    letter-spacing:.3em;
     text-transform:uppercase;
-    color:#f9d97c;
-    font-weight:600;
+    color:var(--ink-muted);
+    font-weight:500;
 }
 .date-scratch-wrapper{
     position:relative;
@@ -266,6 +341,7 @@ section{
     aspect-ratio:1/1;
     border-radius:16px;
     overflow:hidden;
+    border:1px solid var(--glass-edge-strong);
     box-shadow:0 8px 20px rgba(0,0,0,.35);
 }
 .date-scratch-message{
@@ -275,10 +351,10 @@ section{
     display:flex;
     align-items:center;
     justify-content:center;
-    background:#fff8dc;
-    color:#7a0c20;
-    font-family:'Cormorant Garamond',serif;
-    font-weight:700;
+    background:var(--gold-lighter);
+    color:var(--maroon-mid);
+    font-family:var(--font-title);
+    font-weight:400;
     font-size:clamp(1.1rem, 6.5vw, 1.7rem);
 }
 .date-scratch-canvas{
@@ -292,13 +368,13 @@ section{
     touch-action:none;
 }
 .subtitle{
-    color:#f9d97c;
-    letter-spacing:2px;
+    color:var(--gold);
+    letter-spacing:.42em;
+    text-transform:uppercase;
     margin-bottom:15px;
-    font-family:'Love Ya Like A Sister', cursive;
-    text-shadow: 4px 4px 4px #aaa;
-    font-size:3.5rem;
-    font-weight:400;
+    font-family:var(--font-ui);
+    font-size:14px;
+    font-weight:500;
 }
 .hero-logo{
     width:min(150px,38vw);
@@ -315,6 +391,12 @@ section{
     text-align:center;
     margin-bottom:7px;
 }
+.heading p{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:300;
+    color:var(--ink-muted);
+}
 .heading h2::after{
     content:"";
     display:block;
@@ -328,9 +410,10 @@ section{
     background-size:contain;
 }
 .heading h2{
-    font-size:3rem;
+    font-size:clamp(24px,5vw,44px);
+    font-family:var(--font-title);
+    font-weight:400;
     color:var(--gold);
-    font-family:'Great Vibes', cursive;
 }
 .families{
     padding:70px 0 0px;
@@ -341,49 +424,59 @@ section{
 }
 .families-blessing{
     font-size:.75rem;
-    letter-spacing:3px;
+    letter-spacing:.3em;
     text-transform:uppercase;
-    color:#f6f5f2;
+    color:var(--ink-muted);
     margin-bottom:8px;
-    font-family:'Seriff';
+    font-family:var(--font-ui);
+    font-weight:400;
+    line-height:1.8;
 }
 .families-intro{
     max-width:520px;
     margin:0 auto 0px;
-    font-size:1rem;
+    font-family:var(--font-display);
+    font-size:clamp(17px,2.2vw,25px);
     line-height:1.7;
-    color:rgba(255,255,255,.9);
+    color:var(--ink);
 }
 .family-block{
-    max-width:460px;
+    max-width:640px;
     margin:0 auto;
     padding:20px 24px;
 }
 .family-role{
+    font-family:var(--font-ui);
     font-size:.7rem;
-    letter-spacing:2px;
+    letter-spacing:.42em;
     text-transform:uppercase;
     color:var(--gold);
-    font-weight:700;
+    font-weight:500;
     margin-bottom:8px;
 }
 .family-name{
-    font-family:'Aguafina Script',cursive;
+    font-family:var(--font-display);
+    font-style:italic;
     font-size:2.6rem;
-    font-weight:400;
-    color:var(--gold);
+    font-weight:300;
+    background:var(--gold-text);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
     margin-bottom:12px;
 }
 .family-of{
+    font-family:var(--font-display);
     font-style:italic;
-    font-size:.9rem;
-    color:#f9d97c;
+    font-size:1.05rem;
+    color:var(--ink-muted);
     margin-bottom:4px;
 }
 .family-parents{
-    font-size:1.05rem;
-    font-weight:600;
-    color:#fff;
+    font-family:var(--font-display);
+    font-size:1.25rem;
+    font-weight:500;
+    color:var(--cream);
 }
 .family-divider{
     display:flex;
@@ -398,10 +491,12 @@ section{
     content:"";
     flex:1;
     height:1px;
-    background:rgba(255,255,255,.25);
+    background:var(--glass-edge-strong);
 }
 .family-divider span{
-    font-family:'Great Vibes',cursive;
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:300;
     font-size:2.2rem;
     color:var(--gold);
 }
@@ -419,7 +514,7 @@ section{
     top:8px;
     bottom:8px;
     left:19px;
-    border-left:3px dashed rgba(212,175,55,.55);
+    border-left:3px dashed var(--glass-edge-strong);
 }
 .event-item{
     position:relative;
@@ -437,13 +532,13 @@ section{
     height:22px;
     border-radius:50%;
     background:var(--gold);
-    border:3px solid var(--maroon);
-    box-shadow:0 0 0 5px rgba(212,175,55,.15);
+    border:3px solid var(--wine);
+    box-shadow:0 0 0 5px rgba(231,200,122,.15);
     z-index:1;
 }
 .event-content{
-    background:var(--card);
-    border:1px solid rgba(255,255,255,.15);
+    background:var(--glass);
+    border:1px solid var(--glass-edge);
     border-radius:16px;
     padding:14px 16px;
     backdrop-filter:blur(15px);
@@ -451,25 +546,33 @@ section{
 }
 .event-content:hover{
     transform:translateY(-6px);
+    border-color:var(--glass-edge-strong);
     box-shadow:0 15px 35px rgba(0,0,0,.3);
 }
 .event-date{
     display:inline-block;
+    font-family:var(--font-ui);
     color:var(--gold);
-    font-weight:700;
-    letter-spacing:1px;
+    font-weight:500;
+    letter-spacing:.2em;
     font-size:.68rem;
     text-transform:uppercase;
     margin-bottom:6px;
 }
 .event-content h3{
-    color:var(--gold);
+    font-family:var(--font-title);
+    font-weight:400;
+    color:var(--cream);
     font-size:1.3rem;
+}
+.event-content h3 i{
+    color:var(--gold);
 }
 .event-content p{
     margin-top:6px;
     font-size:.88rem;
     line-height:1.5;
+    color:var(--ink-muted);
 }
 .countdown{
     padding:40px 0;
@@ -483,8 +586,15 @@ section{
     text-align:center;
     padding:30px;
     border-radius:20px;
-    background:rgba(255,255,255,.09);
+    background:var(--glass);
+    border:1px solid var(--glass-edge);
     backdrop-filter:blur(15px);
+    font-family:var(--font-ui);
+    font-size:12px;
+    font-weight:400;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--ink-muted);
 }
 /* Individual questions should NOT have their own card */
 .question-block {
@@ -494,35 +604,49 @@ section{
 .question-divider {
     height: 1px;
     margin: 30px 0;
-    background: rgba(255, 255, 255, 0.25);
+    background: var(--glass-edge);
 }
 /* Question text */
 .question-block p {
     margin-bottom: 15px;
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
+    color: var(--cream);
+    font-family: var(--font-display);
+    font-size: clamp(17px,2.2vw,25px);
+    font-weight: 400;
+}
+.question-block p i{
+    color: var(--gold);
+    font-size: .8em;
 }
 /* Input */
 .question-block input {
     width: 100%;
     box-sizing: border-box;
     padding: 15px;
-    border: none;
+    border: 1px solid var(--glass-edge);
     border-radius: 12px;
+    background: rgba(255,255,255,.06);
+    color: var(--ink);
+    font-family: var(--font-ui);
     font-size: 16px;
     outline: none;
     margin-bottom: 15px;
+}
+.question-block input:focus {
+    border-color: var(--glass-edge-strong);
 }
 /* Button */
 .question-block button {
     padding: 14px 22px;
     border: none;
     border-radius: 12px;
-    background: #d9ae2f;
-    color: #000;
-    font-weight: bold;
-    font-size: 16px;
+    background: linear-gradient(135deg,var(--gold-light),var(--gold) 50%,var(--gold-deep-2));
+    color: var(--plum);
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
     cursor: pointer;
 }
 .question-block button:hover {
@@ -530,9 +654,11 @@ section{
 }
 .time-box span{
     display:block;
+    font-family:var(--font-title);
     font-size:3rem;
+    letter-spacing:0;
     color:var(--gold);
-    font-weight:bold;
+    font-weight:400;
 }
 .secret{
     padding:40px 0 40px;
@@ -541,7 +667,8 @@ section{
     margin-bottom:25px;
     padding:25px;
     border-radius:20px;
-    background:rgba(255,255,255,.08);
+    background:var(--glass);
+    border:1px solid var(--glass-edge);
     backdrop-filter:blur(12px);
 }
 .clue-card input{
@@ -558,9 +685,9 @@ section{
     border:none;
     border-radius:10px;
     background:var(--gold);
-    color:black;
+    color:var(--plum);
     cursor:pointer;
-    font-weight:bold;
+    font-weight:500;
 }
 .footer{
     padding:40px 0 100px;
@@ -572,11 +699,28 @@ section{
     font-size:1.15rem;
     line-height:1.9;
 }
+.footer-message h3{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:300;
+    font-size:clamp(17px,2.2vw,25px);
+    color:var(--cream-2);
+}
 .signature{
     margin-top:25px;
-    color:var(--gold);
     font-size:2rem;
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:300;
+    background:var(--gold-text);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+.signature i{
+    -webkit-text-fill-color:var(--red);
+    color:var(--red);
+    font-size:.7em;
 }
 .animate{
     opacity:0;
@@ -603,37 +747,46 @@ section{
     top:0;
     pointer-events:none;
     z-index:100005;
-    color:#e0223d;
+    color:var(--gold);
     text-shadow:0 2px 6px rgba(0,0,0,.25);
     animation:burst .9s ease-out forwards;
     will-change:transform,opacity;
 }
+.burst-particle.rose{
+    color:#c9486e;
+}
 @media(max-width:768px){
-.hero h1{
-    font-size:3rem;
-}
-.hero{
-    justify-content:flex-start;
-    padding-top:110px;
-}
-.timer{
-    grid-template-columns:repeat(2,1fr);
-}
-.heading h2{
-    font-size:2.3rem;
-}
-.date-card{
-    padding:18px 16px;
-}
-.date-scratch-row{
-    gap:10px;
-}
+    .hero h1{
+        font-size:clamp(44px,11vw,60px);
+    }
+    .hero{
+        justify-content:flex-start;
+        padding-top:110px;
+    }
+    .timer{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .heading h2{
+        font-size:clamp(24px,7vw,34px);
+    }
+    .date-card{
+        padding:18px 16px;
+    }
+    .date-scratch-row{
+        gap:10px;
+    }
 }
 /* ---------- BACKGROUND SLIDESHOW ---------- */
+/* Hidden on the landing page; fades in once the visitor scrolls past it */
 .slideshow{
     position:fixed;
     inset:0;
     z-index:-5;
+    opacity:0;
+    transition:opacity 1.2s ease;
+}
+.slideshow.show{
+    opacity:1;
 }
 .slide{
     position:absolute;
@@ -649,22 +802,15 @@ section{
     inset:0;
     background:
     linear-gradient(
-        rgba(122,12,32,.70),
-        rgba(18,71,52,.70)
+        rgba(90,34,56,.72),
+        rgba(42,16,32,.78) 50%,
+        rgba(18,11,19,.88)
     );
 }
-.slide:nth-child(1){
-    background-image:url('Images/photo1.webp');
-}
-.slide:nth-child(2){
-    background-image:url('Images/photo2.webp');
-}
-.slide:nth-child(3){
-    background-image:url('Images/photo3.webp');
-}
-.slide:nth-child(4){
-    background-image:url('Images/photo4.webp');
-}
+.slide:nth-child(1){ background-image:url('Images/photo1.webp'); }
+.slide:nth-child(2){ background-image:url('Images/photo2.webp'); }
+.slide:nth-child(3){ background-image:url('Images/photo3.webp'); }
+.slide:nth-child(4){ background-image:url('Images/photo4.webp'); }
 .slide.active{
     opacity:1;
 }
@@ -683,12 +829,11 @@ section{
     margin: 20px auto 0;
     border-radius: 15px;
     overflow: hidden;
+    border: 1px solid var(--glass-edge-strong);
 }
 .scratch-wrapper.hidden {
     display: none;
 }
-/* Mobile-first: both bride and groom reveal cards use the same portrait 3:4 size.
-   The width follows the phone screen while remaining capped on larger screens. */
 @media (min-width: 769px) {
     .scratch-wrapper {
         width: min(74vw, 320px);
@@ -704,10 +849,11 @@ section{
     justify-content: center;
     padding: 25px;
     text-align: center;
-    background: #fff8dc;
-    color: #8a6500;
+    background: var(--gold-lighter);
+    color: var(--maroon-mid);
+    font-family: var(--font-title);
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 400;
 }
 /* Photo variant of the scratch reveal — now a swipeable gallery */
 .scratch-message.photo{
@@ -731,7 +877,7 @@ section{
     width:100%;
     height:100%;
     object-fit:contain;
-    background:#fff9f0;
+    background:var(--gold-lighter);
     scroll-snap-align:center;
 }
 .photo-scroll-hint{
@@ -739,14 +885,17 @@ section{
     bottom:8px;
     left:50%;
     transform:translateX(-50%);
-    font-size:.7rem;
-    letter-spacing:1px;
-    color:rgba(255,255,255,.85);
-    background:rgba(0,0,0,.35);
+    font-family:var(--font-ui);
+    font-size:.65rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--cream);
+    background:rgba(18,11,19,.6);
     padding:3px 10px;
     border-radius:10px;
     pointer-events:none;
     z-index:2;
+    white-space:nowrap;
 }
 /* The GOLD scratch layer */
 .scratch-card {
@@ -766,11 +915,11 @@ section{
 .wishes-card{
     max-width:700px;
     margin:auto;
-    background:rgba(255,255,255,.08);
+    background:var(--glass);
     backdrop-filter:blur(15px);
     border-radius:25px;
     padding:35px;
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid var(--glass-edge);
 }
 .wishes form{
     display:flex;
@@ -782,19 +931,26 @@ section{
 .wishes textarea{
     width:100%;
     padding:15px;
-    border:none;
+    border:1px solid var(--glass-edge);
     border-radius:12px;
-    background:rgba(255,255,255,.12);
-    color:white;
+    background:rgba(255,255,255,.06);
+    color:var(--ink);
     font-size:1rem;
-    font-family:inherit;
+    font-family:var(--font-ui);
+    font-weight:300;
+    outline:none;
+}
+.wishes input:focus,
+.wishes select:focus,
+.wishes textarea:focus{
+    border-color:var(--glass-edge-strong);
 }
 .wishes input::placeholder,
 .wishes textarea::placeholder{
-    color:rgba(255,255,255,.7);
+    color:var(--ink-soft);
 }
 .wishes select option{
-    color:black;
+    color:var(--plum);
 }
 .wishes button{
     padding:15px;
@@ -802,11 +958,16 @@ section{
     border-radius:12px;
     background:linear-gradient(
         135deg,
-        #d4af37,
-        #ffe18a
+        var(--gold-light),
+        var(--gold) 50%,
+        var(--gold-deep-2)
     );
-    color:black;
-    font-weight:bold;
+    color:var(--plum);
+    font-family:var(--font-ui);
+    font-weight:500;
+    font-size:13px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
     cursor:pointer;
     transition:.3s;
 }
@@ -819,28 +980,37 @@ section{
     text-align:center;
     padding:15px;
     border-radius:12px;
-    background:rgba(212,175,55,.2);
-    color:#ffe18a;
+    background:rgba(231,200,122,.14);
+    border:1px solid var(--glass-edge);
+    color:var(--gold-light);
 }
-/* ---------- Selfie upload prompt (shown when guest can't attend) ---------- */
+/* ---------- Selfie upload prompt ---------- */
 .selfie-block{
     padding:20px;
     border-radius:14px;
-    background:rgba(212,175,55,.12);
-    border:1px dashed rgba(212,175,55,.5);
+    background:rgba(231,200,122,.06);
+    border:1px dashed var(--glass-edge-strong);
     text-align:center;
 }
 .selfie-block p{
     margin-bottom:12px;
     line-height:1.6;
+    color:var(--ink-muted);
+}
+.selfie-block p i{
+    color:var(--gold);
 }
 .selfie-btn{
     display:inline-block;
     padding:13px 22px;
     border-radius:12px;
-    background:linear-gradient(135deg,#d4af37,#ffe18a);
-    color:black;
-    font-weight:bold;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold) 50%,var(--gold-deep-2));
+    color:var(--plum);
+    font-family:var(--font-ui);
+    font-weight:500;
+    font-size:12px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
     text-decoration:none;
     cursor:pointer;
     transition:.3s;
@@ -851,49 +1021,52 @@ section{
 .selfie-filename{
     margin-top:10px;
     font-size:.9rem;
-    color:rgba(255,255,255,.8);
+    color:var(--ink-muted);
 }
 .selfie-status{
     margin-top:10px;
     font-size:.9rem;
-    font-weight:bold;
+    font-weight:500;
 }
-.selfie-status.uploading{
-    color:#ffe18a;
-}
-.selfie-status.success{
-    color:#8fd694;
-}
-.selfie-status.error{
-    color:#e88a8a;
-}
-/* ---------- Live streaming card ---------- */
+.selfie-status.uploading{ color:var(--gold-light); }
+.selfie-status.success{ color:#8fd694; }
+.selfie-status.error{ color:#e88a8a; }
+/* ---------- Live streaming card (blurple accent) ---------- */
 .live-card{
     max-width:700px;
     margin:35px auto 0;
-    background:rgba(255,255,255,.08);
+    background:
+        radial-gradient(circle at top,rgba(145,132,217,.14),transparent 70%),
+        var(--glass);
     backdrop-filter:blur(15px);
     border-radius:25px;
     padding:30px 35px;
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(145,132,217,.35);
     text-align:center;
 }
 .live-card h3{
-    color:var(--gold);
+    font-family:var(--font-title);
+    font-weight:400;
+    color:var(--blurple-light);
     font-size:1.6rem;
     margin-bottom:10px;
 }
 .live-card p{
     line-height:1.7;
+    color:var(--ink-muted);
 }
 .live-btn{
     display:inline-block;
     margin-top:15px;
     padding:14px 24px;
     border-radius:12px;
-    background:linear-gradient(135deg,#7a0c20,#a30d2c);
-    color:white;
-    font-weight:bold;
+    background:linear-gradient(135deg,var(--blurple),var(--blurple-light));
+    color:var(--plum);
+    font-family:var(--font-ui);
+    font-weight:500;
+    font-size:12px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
     text-decoration:none;
     transition:.3s;
 }
@@ -914,7 +1087,7 @@ section{
     display:flex;
     align-items:center;
     justify-content:center;
-    background:#1a0308;
+    background:var(--plum);
     overflow:hidden;
 }
 .intro-video{
@@ -924,14 +1097,10 @@ section{
     height:100%;
     object-fit:cover;
 }
-/* Solid white layer sitting on top of the video. The instant the doors
-   start to part, this fades in to cover the video's plain interior, so
-   visitors never see a mismatched/blank frame - just a clean white flash
-   that then gives way to the real site. */
 .white-flash{
     position:absolute;
     inset:0;
-    background:#fff9f0;
+    background:var(--gold-lighter);
     opacity:0;
     z-index:5;
     pointer-events:none;
@@ -946,8 +1115,6 @@ section{
     pointer-events:none;
     transition:opacity .6s ease, visibility .6s ease;
 }
-/* ---- The actual website content: fades cleanly into view once the
-   white flash has covered the video, instead of sliding up from below ---- */
 #siteReveal{
     position:relative;
     z-index:3;
@@ -964,12 +1131,13 @@ section{
     left:50%;
     transform:translateX(-50%);
     z-index:20;
-    color:#f9d97c;
-    font-family:'Aguafina Script',cursive;
-    font-size:1.5rem;
-    font-weight:400;
-    letter-spacing:.5px;
-    text-transform:none;
+    color:var(--gold);
+    font-family:var(--font-ui);
+    font-size:.8rem;
+    font-weight:500;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    white-space:nowrap;
     text-align:center;
     animation:doorPulse 2s infinite;
 }
@@ -977,13 +1145,14 @@ section{
     0%,100%{ opacity:.55; }
     50%{ opacity:1; }
 }
+/* Garlands belong to the landing page only — they scroll away with it */
 .thoranam{
-    position:fixed;
+    position:absolute;
     top:0;
     left:0;
-    width:100vw;
+    width:100%;
     height:100vh;
-    height:100dvh;   /* mobile-safe fallback */
+    height:100svh;
     margin:0;
     z-index:6;
     pointer-events:none;
@@ -995,7 +1164,10 @@ section{
     opacity:0.5;
 }
 #doorOverlay.unlocking .door-scroll-hint,
-#doorOverlay.flash-white .door-scroll-hint{ opacity:0; transition:opacity .3s ease; }
+#doorOverlay.flash-white .door-scroll-hint{
+    opacity:0;
+    transition:opacity .3s ease;
+}
 .ambaari{
     position:relative;
     width:min(88vw,770px);
@@ -1022,6 +1194,7 @@ section{
     display:block;
     width:100%;
     height:auto;
+    opacity:.7;
     -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
     mask-image: radial-gradient(circle, rgba(0,0,0,1) 37%, rgba(0,0,0,0) 90%);
 }
@@ -1030,7 +1203,7 @@ section{
     padding:15px 20px 70px;
     text-align:center;
 }
-    .save-date .calendar-card{
+.save-date .calendar-card{
     max-width:500px;
     margin:30px auto 0;
     background:transparent;
@@ -1047,15 +1220,380 @@ section{
     background:transparent;
     box-shadow:none;
 }
+/* Display-face titles: "Save the Date", "With Love" */
 .save-date .heading h2,
-.countdown .heading h2,
-.secret .heading h2,
-.wishes .heading h2,
-.footer .heading h2{
-    font-size:3.5rem;
+.with-love-heading h2{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:300;
+    font-size:clamp(40px,7vw,64px);
+    background:var(--gold-text);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 .with-love-heading{
     margin-top:40px;
+}
+
+/* =========================================================
+   CARD SYSTEM — one refined look for every card.
+   Darker, frosted glass so text stays readable over the
+   background photos, with an inner gold frame and a gold
+   hairline across the top.
+========================================================= */
+.date-card,
+.venue-section,
+.event-content,
+.time-box,
+.clue-card,
+.wishes-card,
+.live-card{
+    position:relative;
+    background:
+        linear-gradient(180deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,.015) 40%),
+        linear-gradient(180deg,rgba(42,16,32,.82) 0%,rgba(18,11,19,.88) 100%);
+    border:1px solid rgba(231,200,122,.28);
+    box-shadow:
+        0 24px 50px -18px rgba(0,0,0,.65),
+        0 2px 6px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(251,240,207,.14);
+    -webkit-backdrop-filter:blur(18px) saturate(125%);
+    backdrop-filter:blur(18px) saturate(125%);
+}
+/* Inner gold frame */
+.date-card::before,
+.venue-section::before,
+.event-content::before,
+.time-box::before,
+.clue-card::before,
+.wishes-card::before,
+.live-card::before{
+    content:"";
+    position:absolute;
+    inset:6px;
+    border:1px solid rgba(231,200,122,.12);
+    border-radius:inherit;
+    pointer-events:none;
+}
+/* Gold hairline across the top */
+.date-card::after,
+.venue-section::after,
+.event-content::after,
+.time-box::after,
+.clue-card::after,
+.wishes-card::after,
+.live-card::after{
+    content:"";
+    position:absolute;
+    top:-1px;
+    left:50%;
+    width:46%;
+    height:1px;
+    transform:translateX(-50%);
+    background:linear-gradient(90deg,transparent,var(--gold-light),transparent);
+    pointer-events:none;
+}
+/* Keep card content above the decorative layers */
+.date-card > *,
+.venue-section > *,
+.event-content > *,
+.clue-card > *,
+.wishes-card > *,
+.live-card > *{
+    position:relative;
+    z-index:1;
+}
+
+/* Roomier, softer corners */
+.venue-section,
+.wishes-card,
+.live-card{
+    border-radius:28px;
+    padding:40px 36px;
+}
+.clue-card{
+    border-radius:24px;
+    padding:32px 28px;
+}
+.date-card{
+    border-radius:22px;
+    padding:22px 36px 24px;
+}
+.event-content{
+    border-radius:18px;
+    padding:18px 20px;
+}
+.event-content:hover,
+.time-box:hover{
+    transform:translateY(-6px);
+    border-color:var(--glass-edge-strong);
+    box-shadow:
+        0 30px 60px -20px rgba(0,0,0,.75),
+        0 0 0 1px rgba(231,200,122,.18),
+        inset 0 1px 0 rgba(251,240,207,.18);
+}
+
+/* Countdown tiles */
+.time-box{
+    border-radius:22px;
+    padding:30px 16px 26px;
+    transition:.4s;
+}
+.time-box span{
+    font-size:clamp(2.4rem,5vw,3.4rem);
+    line-height:1.1;
+    margin-bottom:6px;
+    background:var(--gold-text);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+/* Live card keeps its violet accent */
+.live-card{
+    border-color:rgba(145,132,217,.38);
+    background:
+        radial-gradient(circle at 50% 0%,rgba(145,132,217,.20),transparent 65%),
+        linear-gradient(180deg,rgba(42,16,32,.82) 0%,rgba(18,11,19,.88) 100%);
+}
+.live-card::before{
+    border-color:rgba(145,132,217,.16);
+}
+.live-card::after{
+    background:linear-gradient(90deg,transparent,var(--blurple-light),transparent);
+}
+
+/* Timeline dots get a soft glow */
+.event-dot{
+    background:radial-gradient(circle at 35% 30%,var(--gold-light),var(--gold) 55%,var(--gold-deep));
+    border-color:var(--maroon-mid);
+    box-shadow:0 0 0 5px rgba(231,200,122,.12),0 0 16px rgba(231,200,122,.35);
+}
+
+/* Slightly larger kicker on the landing page */
+.subtitle{
+    font-size:clamp(12px,1.4vw,16px);
+}
+
+/* Falling flowers — see-through, floating over everything but never blocking taps */
+.petals{
+    z-index:50;
+    pointer-events:none;
+}
+.petal{
+    opacity:.55;
+}
+
+/* =========================================================
+   LANDING PAGE — responsive layout
+========================================================= */
+/* Garlands fill the whole first screen and fade out softly at the bottom */
+.thoranam{
+    height:100vh;
+    height:100svh;
+    background-size:100% auto;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 72%,transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 0%,#000 72%,transparent 100%);
+}
+
+/* Garlands sit BEHIND the logo and text on every screen */
+.thoranam{
+    z-index:1;
+}
+
+/* Desktop: softer, lighter garlands with a dark glow in the centre
+   so the logo, names and photo stand out clearly */
+@media (min-width:1025px){
+    .thoranam{
+        opacity:.28;
+        background-size:92% auto;
+    }
+    .hero::before{
+        content:"";
+        position:absolute;
+        left:50%;
+        top:0;
+        width:min(1100px,90vw);
+        height:100vh;
+        transform:translateX(-50%);
+        background:radial-gradient(ellipse 50% 55% at 50% 45%,rgba(18,11,19,.55) 0%,rgba(42,16,32,.35) 45%,transparent 75%);
+        pointer-events:none;
+        z-index:-1;
+    }
+    .hero-logo img{
+        filter:drop-shadow(0 4px 18px rgba(0,0,0,.6));
+    }
+    .subtitle{
+        text-shadow:0 2px 14px rgba(0,0,0,.5);
+    }
+    .hero h1{
+        filter:drop-shadow(0 2px 12px rgba(0,0,0,.5));
+    }
+}
+
+/* Keep hero content between the garland columns */
+.hero{
+    width:min(760px,62%);
+    justify-content:flex-start;
+    padding-top:clamp(110px,14vh,170px);
+    padding-bottom:40px;
+}
+.hero h1{
+    font-size:clamp(34px,4.6vw,64px);
+    margin-bottom:18px;
+}
+.hero h2{
+    line-height:1.45;
+}
+.hero-portrait{
+    width:min(100%,540px);
+    margin:0 auto 22px;
+    border-radius:0;
+}
+.hero-portrait img{
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 37%, rgba(0,0,0,0) 90%);
+}
+.ambaari{
+    width:min(100%,640px);
+    margin:22px auto 26px;
+}
+.ambaari img{
+    height:auto;
+}
+
+/* Tablet */
+@media (max-width:1024px){
+    .hero{
+        width:min(640px,72%);
+        padding-top:clamp(100px,12vh,150px);
+    }
+    .hero h1{
+        font-size:clamp(34px,6vw,54px);
+    }
+    .hero-portrait{
+        width:min(100%,460px);
+    }
+}
+
+/* Mobile */
+@media (max-width:600px){
+    .hero{
+        width:78%;
+        padding-top:100px;
+    }
+    .hero-logo{
+        width:min(120px,34vw);
+    }
+    .subtitle{
+        letter-spacing:.3em;
+        font-size:12px;
+    }
+    .hero h1{
+        font-size:clamp(30px,9vw,42px);
+    }
+    .hero-portrait{
+        width:100%;
+    }
+    .date-scratch-title{
+        font-size:1.1rem;
+    }
+}
+
+/* =========================================================
+   GUESTBOOK FIELDS — fixed size, cannot be dragged
+========================================================= */
+.wishes input,
+.wishes textarea{
+    display:block;
+    width:100% !important;
+    resize:none;
+}
+.wishes textarea#message{
+    height:130px !important;
+}
+.wishes textarea#favoriteMemory{
+    height:100px !important;
+}
+
+@media(max-width:768px){
+    /* Less empty space above the Wedding Guestbook heading */
+    .wishes{
+        padding:20px 0 40px;
+    }
+    .footer{
+        padding-top:10px;
+    }
+    .venue-section,
+    .live-card{
+        padding:30px 22px;
+    }
+    .wishes-card{
+        padding:20px 22px;
+    }
+    .clue-card{
+        padding:26px 20px;
+    }
+    .date-card{
+        padding:18px 16px 20px;
+    }
+}
+
+/* =========================================================
+   SCRIPT HEADINGS — Great Vibes
+========================================================= */
+.heading h2,
+.save-date .heading h2,
+.with-love-heading h2{
+    font-family:var(--font-script);
+    font-weight:400;           /* Great Vibes only comes in 400 */
+    font-style:normal;         /* stops the browser faking a slant */
+    letter-spacing:0;
+    line-height:1.3;
+    padding:0 .15em;           /* keeps the curly letter tails from being cut off */
+    font-size:clamp(38px,6.5vw,62px);
+}
+.save-date .heading h2,
+.with-love-heading h2{
+    font-size:clamp(48px,8vw,78px);
+}
+@media(max-width:768px){
+    .heading h2{
+        font-size:clamp(34px,9vw,46px);
+    }
+    .save-date .heading h2,
+    .with-love-heading h2{
+        font-size:clamp(42px,11vw,56px);
+    }
+}
+
+/* Couple names — Great Vibes */
+.hero h1,
+.family-name{
+    font-family:var(--font-script);
+    font-weight:400;
+    font-style:normal;
+    letter-spacing:0;
+    line-height:1.25;
+    padding:0 .2em .1em;       /* keeps the curly letter tails from being cut off */
+}
+.hero h1{
+    font-size:clamp(46px,6vw,82px);
+}
+.family-name{
+    white-space:nowrap;                 /* never break the name onto two lines */
+    font-size:clamp(34px,5.4vw,54px);
+}
+@media (max-width:600px){
+    .hero h1{
+        font-size:clamp(40px,12vw,54px);
+    }
+    /* Keep each name on a single line on phones */
+    .family-name{
+        white-space:nowrap;
+        font-size:min(9vw,48px);
+    }
 }
 </style>
 </head>
@@ -1070,19 +1608,19 @@ section{
 
     <audio id="bgMusic" preload="none"></audio>
 
-    <div class="slideshow">
-    <div class="slide active"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-</div>
+    <div class="slideshow" id="slideshow">
+        <div class="slide active"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+    </div>
 
 <div class="progress"></div>
 
-<button class="music-btn" id="musicBtn" aria-label="Play background music"></button>
-<div class="tap-hint" id="tapHint">🎵 Tap to enable wedding experience</div>
-
+<button class="music-btn" id="musicBtn" aria-label="Play background music"><i class="ph-fill ph-music-notes"></i></button>
 <div class="petals" id="petals"></div>
+
+<div class="tap-hint" id="tapHint"><i class="ph-light ph-music-notes"></i> Tap to enable wedding experience</div>
 
 <section class="thoranam"></section>
 
@@ -1098,7 +1636,9 @@ section{
 
     <h1>
         SaravanaKumar
-        <span class="amp">&</span>
+        <br>
+        <span class="amp">&amp;</span>
+        <br>
         Sivashankari
     </h1>
 
@@ -1110,14 +1650,12 @@ section{
     <h2>A beautiful beginning,</h2>
     <h2>A lifetime together...</h2>
 
-    
-
     <div class="ambaari">
         <img src="Images/ambaari.webp" alt="SaravanaKumar and Sivashankari" decoding="async">
     </div>
 
     <div class="date-card">
-        <div class="date-scratch-title">✨ Scratch to Unveil Our Big Day ✨</div>
+        <div class="date-scratch-title"><i class="ph-fill ph-sparkle"></i> Scratch to Unveil Our Big Day <i class="ph-fill ph-sparkle"></i></div>
         <div class="date-scratch-row">
             <div class="date-scratch-item">
                 <div class="date-scratch-label">Day</div>
@@ -1147,13 +1685,12 @@ section{
 <section class="families animate">
     <div class="heading">
         <p class="families-blessing">Under the blessings of those we love, we begin our forever!</p>
-        <!-- <h2>Our Families</h2> -->
     </div>
     <p class="families-intro"></p>
 
     <div class="family-block">
         <p class="family-role">The Groom</p>
-        <h3 class="family-name">SaravanaKumar</h3>
+        <h3 class="family-name">SaravanaKumar PS</h3>
         <p class="family-of">Son of</p>
         <p class="family-parents">Mr. Sengodan &amp; Mrs. Amudha</p>
     </div>
@@ -1162,7 +1699,7 @@ section{
 
     <div class="family-block">
         <p class="family-role">The Bride</p>
-        <h3 class="family-name">Sivashankari</h3>
+        <h3 class="family-name">Sivashankari M</h3>
         <p class="family-of">Daughter of</p>
         <p class="family-parents">Mr. Murugesan &amp; Mrs. Punitha</p>
     </div>
@@ -1178,10 +1715,10 @@ section{
             <div class="event-dot"></div>
             <div class="event-content">
                 <span class="event-date">22nd October 2026 · Thursday</span>
-                <h3>🌿 Mehandhi</h3>
+                <h3><i class="ph-light ph-flower-tulip"></i> Mehandhi</h3>
                 <p>
                     Time: 05:00 PM Onwards<br>
-                    Venue: Bride's & Groom's home
+                    Venue: Bride's &amp; Groom's home
                 </p>
             </div>
         </div>
@@ -1190,7 +1727,7 @@ section{
             <div class="event-dot"></div>
             <div class="event-content">
                 <span class="event-date">24th October 2026 · Saturday</span>
-                <h3>🎉 Reception</h3>
+                <h3><i class="ph-light ph-confetti"></i> Reception</h3>
                 <p>
                     Time: 07:00 PM Onwards<br>
                     Venue: Alayamani Mahal, Perundurai Road, Erode
@@ -1202,7 +1739,7 @@ section{
             <div class="event-dot"></div>
             <div class="event-content">
                 <span class="event-date">25th October 2026 · Sunday</span>
-                <h3>💍 Muhurtham</h3>
+                <h3><i class="ph-light ph-diamond"></i> Muhurtham</h3>
                 <p>
                     Time: 07:05 AM - 07:45 AM<br>
                     Venue: Alayamani Mahal, Perundurai Road, Erode
@@ -1216,21 +1753,20 @@ section{
 <section class="venue-reveal animate">
     <div class="venue-section">
         <h2>
-            <!-- <img src="Images/destination.webp" alt="Venue pin" class="venue-pin-icon" loading="lazy"> -->
-            📍Venue: Alayamani Mahal
+            <i class="ph-light ph-map-pin"></i> Venue: Alayamani Mahal
         </h2>
         <a href="https://maps.app.goo.gl/dB3QYPMdqQ3eAYWR9"
-                target="_blank"
-                class="map-btn">
-                Open in Google Maps
-                </a>
+           target="_blank"
+           class="map-btn">
+            Open in Google Maps
+        </a>
         <img src="Images/wedding-venue-qr.webp" alt="Venue QR Code"
-                class="venue-qr"
-                loading="lazy">
+             class="venue-qr"
+             loading="lazy">
     </div>
 </section>
 
-<section class="save-date animate"> 
+<section class="save-date animate">
     <div class="heading">
         <h2>Save The Date</h2>
     </div>
@@ -1280,7 +1816,7 @@ section{
         <!-- Bride -->
         <div class="question-block">
 
-            <p> ❈ What is the nickname of the Bride? ❈</p>
+            <p><i class="ph-fill ph-sparkle"></i> What is the nickname of the Bride? <i class="ph-fill ph-sparkle"></i></p>
 
             <input id="c1">
 
@@ -1293,7 +1829,7 @@ section{
                 <!-- Hidden answer -->
                 <div class="scratch-message photo">
                     <div class="photo-scroll">
-                        <img src="Images/Bride reveal/sankari-1.webp" alt="Bride reveal photo 1" loading="lazy">
+                        <!-- <img src="Images/Bride reveal/sankari-1.webp" alt="Bride reveal photo 1" loading="lazy"> -->
                         <img src="Images/Bride reveal/sankari-2.webp" alt="Bride reveal photo 2" loading="lazy">
                         <img src="Images/Bride reveal/sankari-3.webp" alt="Bride reveal photo 3" loading="lazy">
                         <img src="Images/Bride reveal/sankari-4.webp" alt="Bride reveal photo 4" loading="lazy">
@@ -1302,7 +1838,7 @@ section{
                         <img src="Images/Bride reveal/sankari-7.webp" alt="Bride reveal photo 7" loading="lazy">
                         <!-- <img src="Images/Bride reveal/sankari-8.webp" alt="Bride reveal photo 8" loading="lazy"> -->
                     </div>
-                    <span class="photo-scroll-hint">Swipe for more →</span>
+                    <span class="photo-scroll-hint">Swipe for more <i class="ph-light ph-arrow-right"></i></span>
                 </div>
 
                 <!-- Scratch surface -->
@@ -1317,7 +1853,7 @@ section{
         <!-- Groom -->
         <div class="question-block">
 
-            <p>❈ What is the nickname of the Groom? ❈</p>
+            <p><i class="ph-fill ph-sparkle"></i> What is the nickname of the Groom? <i class="ph-fill ph-sparkle"></i></p>
 
             <input id="c4">
 
@@ -1338,7 +1874,7 @@ section{
                         <img src="Images/Groom reveal/saro-7.webp" alt="Groom reveal photo 7" loading="lazy">
                         <img src="Images/Groom reveal/saro-8.webp" alt="Groom reveal photo 8" loading="lazy">
                     </div>
-                    <span class="photo-scroll-hint">Swipe for more →</span>
+                    <span class="photo-scroll-hint">Swipe for more <i class="ph-light ph-arrow-right"></i></span>
                 </div>
 
                 <!-- Scratch surface -->
@@ -1383,7 +1919,7 @@ section{
                       rows="3"></textarea>
 
             <div class="selfie-block">
-                <p>📸 Have a selfie or video wish for the couple? Add it here — totally optional.</p>
+                <p><i class="ph-light ph-camera"></i> Have a selfie or video wish for the couple? Add it here — totally optional.</p>
                 <label for="selfieFile" class="selfie-btn">
                     Choose a Photo or Video
                 </label>
@@ -1402,16 +1938,16 @@ section{
         </form>
 
         <div id="wishesSuccess" class="rsvp-success">
-            🎉 Thank you for your beautiful wishes!
+            <i class="ph-light ph-confetti"></i> Thank you for your beautiful wishes!
         </div>
 
     </div>
 
     <div class="live-card">
-        <h3>📺 Wedding Live Stream</h3>
+        <h3><i class="ph-light ph-broadcast"></i> Wedding Live Stream</h3>
         <p id="liveText">Can't be there in person? The live streaming link will appear here closer to the big day — check back soon!</p>
         <a id="liveBtn" href="#" target="_blank" class="live-btn hidden">
-            ▶️ Watch Live on YouTube
+            <i class="ph-fill ph-play"></i> Watch Live on YouTube
         </a>
     </div>
 
@@ -1430,34 +1966,42 @@ section{
     </div>
 
     <div class="signature">
-        Sivashankari ❤️ SaravanaKumar 
+        Sivashankari <br> <i class="ph-fill ph-heart"></i> <br> SaravanaKumar
     </div>
 </section>
 </div>
 
 <script>
 
+/* Theme colors used inside canvas drawing */
+const THEME = {
+    goldLight: "#fbf0cf",
+    gold: "#e7c87a",
+    goldDeep: "#b0803a",
+    plum: "#120b13",
+    maroon: "#2a1020"
+};
+
+/* Paints the gold scratch surface with the theme gradient */
+function paintGoldSurface(ctx, width, height){
+    const grad = ctx.createLinearGradient(0, 0, width, height);
+    grad.addColorStop(0, THEME.goldLight);
+    grad.addColorStop(0.5, THEME.gold);
+    grad.addColorStop(1, THEME.goldDeep);
+    ctx.globalCompositeOperation = "source-over";
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, width, height);
+}
+
 /* ==============================
    DIGITAL WISHES — CONFIG
-   Edit these three lines as your plans firm up. Everything below
-   reacts automatically to whatever you set here.
 ============================== */
 
-// A place for guests who can't attend to drop a selfie or short video —
-// saved via a Google Apps Script Web App running under your own account,
-// so guests never need to sign in. Set MAX_BYTES to match the cap you
-// set in the script itself (default there is 15MB).
 const SELFIE_UPLOAD_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzkJsG4wkyhmiwY8IYeWR2W0TdRhrmzbsq_x7Qlj3VIyf7a1uPZ3BFdbfzfFYgMt2FXcQ/exec";
 const MAX_BYTES = 15 * 1024 * 1024;
 
-// Paste your YouTube live link here once you have it. Leave empty ("")
-// until then — the section will show a "coming soon" message instead.
 const YOUTUBE_LIVE_LINK = "";
 
-// Wishes are saved by silently submitting to this Google Form, which is
-// linked to a Google Sheet — so every wish lands in the Sheet automatically.
-// The selfie/video file is handled separately, uploaded straight to Drive
-// via the Apps Script backend configured above.
 const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSemrN049pG2Kt9s_1f0MohI6k2Hx-ZF75E3SIi0Pl2U-mRO9A/formResponse";
 const ENTRY_NAME = "entry.1704613668";
 const ENTRY_EMAIL = "entry.644863349";
@@ -1475,8 +2019,6 @@ selfieFileInput.addEventListener("change", () => {
     selfieStatus.classList.add("hidden");
 });
 
-/* Reads the chosen file and uploads it to the Apps Script backend.
-   Returns true/false so the caller knows whether it actually saved. */
 function readFileAsDataURL(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -1515,7 +2057,7 @@ async function uploadSelfie(file, guestName) {
         selfieStatus.classList.remove("uploading");
         if (result.status === "ok") {
             selfieStatus.classList.add("success");
-            selfieStatus.textContent = "Uploaded! 🎉";
+            selfieStatus.innerHTML = 'Uploaded! <i class="ph-light ph-confetti"></i>';
             return true;
         } else {
             selfieStatus.classList.add("error");
@@ -1541,13 +2083,13 @@ if (YOUTUBE_LIVE_LINK) {
     liveText.textContent = "We're live! Tap below to join us as we begin our forever.";
 }
 
-/* Wishes form submit — saves text to the Sheet, and the file (if any) to Drive */
+/* Wishes form submit */
 document.getElementById("wishesForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const guestName = document.getElementById("guestName").value;
     const selectedFile = selfieFileInput.files[0];
-    let selfieUploaded = null; // null = no file chosen, true/false = attempted
+    let selfieUploaded = null;
 
     if (selectedFile) {
         selfieUploaded = await uploadSelfie(selectedFile, guestName);
@@ -1571,10 +2113,11 @@ document.getElementById("wishesForm").addEventListener("submit", async (e) => {
     }
 
     const successBox = document.getElementById("wishesSuccess");
+    const icon = '<i class="ph-light ph-confetti"></i> ';
     if (selfieUploaded === false) {
-        successBox.textContent = "🎉 Thank you for your beautiful wishes! (Your photo/video couldn't be uploaded — but your message was saved.)";
+        successBox.innerHTML = icon + "Thank you for your beautiful wishes! (Your photo/video couldn't be uploaded — but your message was saved.)";
     } else {
-        successBox.textContent = "🎉 Thank you for your beautiful wishes!";
+        successBox.innerHTML = icon + "Thank you for your beautiful wishes!";
     }
 
     document.getElementById("wishesForm").style.display = "none";
@@ -1588,8 +2131,8 @@ window.addEventListener('scroll',()=>{
     document.querySelector('.progress').style.width=(winScroll/height)*100+"%";
 });
 
-/* Countdown */
-const weddingDate=new Date("October 24, 2026 07:05:00").getTime();
+/* Countdown — to the Muhurtham (25 Oct 2026, 07:05 AM) */
+const weddingDate=new Date("October 25, 2026 07:05:00").getTime();
 
 setInterval(()=>{
     const now=new Date().getTime();
@@ -1616,20 +2159,37 @@ document.querySelectorAll(".animate").forEach(el=>{
 
 /* Floating Petals */
 const petals=document.getElementById("petals");
+// Original colourful flowers: yellow flower, sparkle, hibiscus
+const petalEmojis=["🌼","✨","🌺"];
 
 for(let i=0;i<40;i++){
 
     const p=document.createElement("div");
     p.className="petal";
-    p.innerHTML=["🌼","✨","🌺"][Math.floor(Math.random()*3)];
+    p.textContent=petalEmojis[Math.floor(Math.random()*petalEmojis.length)];
 
     p.style.left=Math.random()*100+"%";
-    p.style.fontSize=(15+Math.random()*20)+"px";
-    p.style.animationDuration=(8+Math.random()*12)+"s";
-    p.style.animationDelay=Math.random()*10+"s";
+    const duration=10+Math.random()*12;
+    p.style.fontSize=(18+Math.random()*18)+"px";
+    p.style.animationDuration=duration+"s";
+    // Negative delay so flowers are already mid-fall when the page opens
+    p.style.animationDelay=(-Math.random()*duration)+"s";
 
     petals.appendChild(p);
 }
+
+/* Background photos: hidden on the landing page (garlands only),
+   fade in once the visitor scrolls past the first screen */
+const slideshowEl = document.getElementById("slideshow");
+const heroEl = document.querySelector(".hero");
+
+function updateBackground(){
+    // Show photos as soon as the visitor starts scrolling
+    slideshowEl.classList.toggle("show", window.scrollY > 40);
+}
+window.addEventListener("scroll", updateBackground, { passive:true });
+window.addEventListener("resize", updateBackground);
+updateBackground();
 
 /* ==============================
    Video Opening Intro
@@ -1647,23 +2207,15 @@ function openDoors(){
 
     if (typeof startMusic === "function") startMusic();
 
-    // Step 1: the instant the doors start to part, flash to a clean white
-    // screen. This covers the video's plain interior so visitors never see
-    // a mismatched frame behind the doors.
     overlay.classList.add("flash-white");
     overlay.classList.add("unlocking");
 
-    // Step 2: once the white flash has fully covered the video, swap in
-    // the real site (fading in) and start fading the whole overlay away.
     setTimeout(() => {
         video.pause();
         document.body.style.overflow = "auto";
         document.getElementById("siteReveal").classList.add("revealed");
         overlay.classList.add("hide-overlay");
 
-        // If the browser blocked the automatic music start above, nudge
-        // the visitor with a gentle "tap to enable music" prompt once the
-        // site itself is visible.
         if (typeof showTapHint === "function") showTapHint();
 
         setTimeout(() => {
@@ -1677,15 +2229,16 @@ document.body.style.overflow = "hidden";
 const introVideo = document.getElementById("introVideo");
 const introSkipHint = document.getElementById("introSkipHint");
 
-// Reveal the site right as the doors begin to part - before any of the
-// video's baked-in background/text becomes visible through the gap.
 introVideo.addEventListener("timeupdate", () => {
     if (introVideo.currentTime >= 12.4) openDoors();
 });
 introVideo.addEventListener("ended", openDoors);
 
-// If autoplay is blocked by the browser, show a tap-to-play prompt
-// instead of leaving the visitor stuck on a frozen frame.
+// If the intro video can't load, go straight to the invitation
+const introSource = introVideo.querySelector("source");
+if (introSource) introSource.addEventListener("error", openDoors);
+if (introVideo.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) openDoors();
+
 const playAttempt = introVideo.play();
 if (playAttempt && typeof playAttempt.catch === "function") {
     playAttempt.catch(() => {
@@ -1694,10 +2247,9 @@ if (playAttempt && typeof playAttempt.catch === "function") {
     });
 }
 
-// Let visitors skip the intro early with a tap.
 document.getElementById("doorOverlay").addEventListener("click", () => {
     if (introVideo.paused) {
-        introVideo.play().catch(()=>{});
+        introVideo.play().catch(() => openDoors());
     } else {
         openDoors();
     }
@@ -1710,7 +2262,6 @@ document.getElementById("doorOverlay").addEventListener("click", () => {
 const bgMusic = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 
-// Pick one of the two wedding songs at random on every page load/refresh.
 const songPlaylist = [
     "music/roja_roja.mp3",
     "music/wedding_invite_audio.mp3"
@@ -1719,11 +2270,8 @@ const chosenSong = songPlaylist[Math.floor(Math.random() * songPlaylist.length)]
 bgMusic.src = chosenSong;
 
 let musicStarted = false;
-let userPaused = false; // true only when the visitor explicitly hits pause
+let userPaused = false;
 
-// Fades in the "Tap to enable wedding music" prompt near the music
-// button, but only if music hasn't already started playing. Auto-hides
-// itself after a while so it doesn't linger on screen forever.
 function showTapHint(){
     const hint = document.getElementById("tapHint");
     if (!hint || musicStarted) return;
@@ -1740,40 +2288,27 @@ function hideTapHint(){
     if (hint) hint.classList.remove("show");
 }
 
-// Starts music once after first user interaction
 async function startMusic() {
 
     if (musicStarted) return;
 
     try {
-
         await bgMusic.play();
-
         musicStarted = true;
         hideTapHint();
         musicBtn.classList.add("playing");
         musicBtn.setAttribute("aria-label", "Pause background music");
-
     } catch (err) {
-
         console.log("Music blocked:", err);
-
     }
-
 }
 
-// Works on desktop and mobile — the very first tap/click anywhere starts it.
-// (True autoplay-with-sound on page load isn't allowed by any modern
-// mobile browser without this kind of user-gesture trigger.)
 document.addEventListener("pointerdown", startMusic, { once: true });
-
 document.addEventListener("keydown", startMusic, { once: true });
 
-// Toggle button — tap to spin the disc and play, tap again to stop it
 musicBtn.addEventListener("click", async () => {
 
     if (bgMusic.paused) {
-
         try {
             await bgMusic.play();
             musicStarted = true;
@@ -1784,43 +2319,28 @@ musicBtn.addEventListener("click", async () => {
         } catch (err) {
             console.log("Music blocked:", err);
         }
-
     } else {
-
         bgMusic.pause();
         userPaused = true;
         musicBtn.classList.remove("playing");
         musicBtn.setAttribute("aria-label", "Play background music");
-
     }
-
 });
 
-// Stop the music the instant the visitor leaves this tab/app — switches
-// apps, minimizes the browser, locks the phone, or opens another tab —
-// and pick back up automatically when they return, unless they had
-// paused it themselves on purpose.
 document.addEventListener("visibilitychange", () => {
 
     if (document.hidden) {
-
         if (!bgMusic.paused) {
             bgMusic.pause();
         }
-
     } else if (musicStarted && !userPaused) {
-
         bgMusic.play().then(() => {
             musicBtn.classList.add("playing");
             musicBtn.setAttribute("aria-label", "Pause background music");
         }).catch(err => console.log("Resume blocked:", err));
-
     }
-
 });
 
-// Extra safety net for mobile browsers (notably iOS Safari) that don't
-// always fire visibilitychange reliably when the app is backgrounded.
 window.addEventListener("pagehide", () => {
     bgMusic.pause();
 });
@@ -1828,18 +2348,12 @@ window.addEventListener("pagehide", () => {
 /* ---------- BACKGROUND SLIDESHOW ---------- */
 
 const slides=document.querySelectorAll('.slide');
-
 let currentSlide=0;
 
 setInterval(()=>{
-
-slides[currentSlide].classList.remove('active');
-
-currentSlide=
-(currentSlide+1)%slides.length;
-
-slides[currentSlide].classList.add('active');
-
+    slides[currentSlide].classList.remove('active');
+    currentSlide=(currentSlide+1)%slides.length;
+    slides[currentSlide].classList.add('active');
 },5000);
 
 /* ---------- SCRATCH CARD ---------- */
@@ -1847,7 +2361,6 @@ slides[currentSlide].classList.add('active');
 function unlockScratch(inputId, correctAnswers, scratchId, btnEl) {
 
     const input = document.getElementById(inputId);
-
     const userAnswer = input.value.trim().toLowerCase();
 
     const acceptedAnswers = correctAnswers.map(answer =>
@@ -1859,17 +2372,12 @@ function unlockScratch(inputId, correctAnswers, scratchId, btnEl) {
         return;
     }
 
-    // Correct answer — hide the button and input so this can't be triggered again
     if (btnEl) btnEl.style.display = "none";
     input.style.display = "none";
 
-    // Correct answer
     const wrapper = document.getElementById(scratchId);
-
-    // Show scratch card
     wrapper.classList.remove("hidden");
 
-    // Wait until browser renders the wrapper
     setTimeout(() => {
         initializeScratchCard(wrapper);
     }, 50);
@@ -1878,69 +2386,41 @@ function unlockScratch(inputId, correctAnswers, scratchId, btnEl) {
 function initializeScratchCard(wrapper) {
 
     const canvas = wrapper.querySelector(".scratch-card");
-
     const ctx = canvas.getContext("2d");
 
-    // Get actual displayed size
     const width = wrapper.clientWidth;
     const height = wrapper.clientHeight;
 
     canvas.width = width;
     canvas.height = height;
 
-    // ------------------------------------------------
     // GOLD SCRATCH SURFACE
-    // ------------------------------------------------
+    paintGoldSurface(ctx, canvas.width, canvas.height);
 
-    ctx.globalCompositeOperation = "source-over";
-
-    ctx.fillStyle = "#D4AF37";
-
-    ctx.fillRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
-
-    // ------------------------------------------------
     // TEXT ON SCRATCH CARD
-    // ------------------------------------------------
-
-    ctx.fillStyle = "#ffffff";
-
-    ctx.font = "bold 20px Arial";
-
+    ctx.fillStyle = THEME.maroon;
+    ctx.font = "500 15px 'Jost', Arial";
     ctx.textAlign = "center";
-
     ctx.textBaseline = "middle";
 
     ctx.fillText(
-        "✨ Scratch here to reveal ✨",
+        "✦  SCRATCH TO REVEAL  ✦",
         canvas.width / 2,
         canvas.height / 2
     );
 
-    // ------------------------------------------------
     // SCRATCHING
-    // ------------------------------------------------
-
     let isScratching = false;
     let fullyRevealed = false;
 
     function getPosition(event) {
-
         const rect = canvas.getBoundingClientRect();
-
         return {
             x: event.clientX - rect.left,
             y: event.clientY - rect.top
         };
     }
 
-    // Checks how much of the gold layer has been cleared. Once most of it
-    // is gone, auto-clear the rest and fire a laughing-emoji burst so the
-    // reveal feels complete and playful.
     function checkCompletion(){
         if(fullyRevealed) return;
 
@@ -1956,12 +2436,11 @@ function initializeScratchCard(wrapper) {
             fullyRevealed = true;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             canvas.style.pointerEvents = "none";
-            particleBurst(wrapper, "😂");
+            particleBurst(wrapper, "ph-smiley");
         }
     }
 
     function scratch(event) {
-
         if (!isScratching || fullyRevealed) {
             return;
         }
@@ -1969,55 +2448,36 @@ function initializeScratchCard(wrapper) {
         const position = getPosition(event);
 
         ctx.globalCompositeOperation = "destination-out";
-
         ctx.beginPath();
-
-        ctx.arc(
-            position.x,
-            position.y,
-            25,
-            0,
-            Math.PI * 2
-        );
-
+        ctx.arc(position.x, position.y, 25, 0, Math.PI * 2);
         ctx.fill();
 
         checkCompletion();
     }
 
-    // Mouse / touch / pen
     canvas.addEventListener("pointerdown", function(event) {
-
         isScratching = true;
-
         canvas.setPointerCapture(event.pointerId);
-
         scratch(event);
-
     });
 
     canvas.addEventListener("pointermove", function(event) {
-
         scratch(event);
-
     });
 
     canvas.addEventListener("pointerup", function() {
-
         isScratching = false;
-
     });
 
     canvas.addEventListener("pointercancel", function() {
-
         isScratching = false;
-
     });
 }
 
 /* ---------- DATE SCRATCH CARDS ---------- */
 
-function particleBurst(originEl, emoji, count = 22){
+// iconClass is a Phosphor icon name, e.g. "ph-heart" or "ph-smiley"
+function particleBurst(originEl, iconClass, count = 22, extraClass = ""){
 
     const rect = originEl.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -2026,8 +2486,8 @@ function particleBurst(originEl, emoji, count = 22){
     for(let i = 0; i < count; i++){
 
         const particle = document.createElement("span");
-        particle.className = "burst-particle";
-        particle.textContent = emoji;
+        particle.className = "burst-particle" + (extraClass ? " " + extraClass : "");
+        particle.innerHTML = `<i class="ph-fill ${iconClass}"></i>`;
 
         const angle = Math.random() * Math.PI * 2;
         const distance = 55 + Math.random() * 90;
@@ -2060,16 +2520,14 @@ function initDateScratchCards(){
         canvas.height = height;
 
         // Gold scratch surface
-        ctx.globalCompositeOperation = "source-over";
-        ctx.fillStyle = "#D4AF37";
-        ctx.fillRect(0, 0, width, height);
+        paintGoldSurface(ctx, width, height);
 
-        ctx.fillStyle = "#ffffff";
-        ctx.font = `bold ${Math.max(11, width * 0.13)}px 'DM Sans', Arial`;
+        ctx.fillStyle = THEME.maroon;
+        ctx.font = `500 ${Math.max(10, width * 0.12)}px 'Jost', Arial`;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillText("Scratch", width / 2, height / 2 - height * 0.1);
-        ctx.fillText("✨", width / 2, height / 2 + height * 0.18);
+        ctx.fillText("SCRATCH", width / 2, height / 2 - height * 0.1);
+        ctx.fillText("✦", width / 2, height / 2 + height * 0.18);
 
         let isScratching = false;
         let fullyRevealed = false;
@@ -2079,9 +2537,6 @@ function initDateScratchCards(){
             return { x: event.clientX - rect.left, y: event.clientY - rect.top };
         }
 
-        // Checks how much of the gold layer has been cleared. Once most of
-        // it is gone, auto-clear the rest and fire the heart burst so the
-        // reveal feels complete rather than leaving stray gold flecks.
         function checkCompletion(){
             if(fullyRevealed) return;
 
@@ -2097,7 +2552,7 @@ function initDateScratchCards(){
                 fullyRevealed = true;
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 canvas.style.pointerEvents = "none";
-                particleBurst(wrapper, "❤");
+                particleBurst(wrapper, "ph-heart", 22, "rose");
             }
         }
 
@@ -2122,7 +2577,10 @@ function initDateScratchCards(){
     });
 }
 
-window.addEventListener("load", initDateScratchCards);
+// Wait for fonts so the Jost label on the scratch canvases renders correctly
+window.addEventListener("load", () => {
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(initDateScratchCards);
+});
 
 </script>
 
