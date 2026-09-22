@@ -400,9 +400,9 @@ section{
 .heading h2::after{
     content:"";
     display:block;
-    width:220px;
-    max-width:60%;
-    height:24px;
+    width:260px;
+    max-width:77%;
+    height:30px;
     margin:10px auto 0;
     background-image:url('Images/heart-divider.webp');
     background-repeat:no-repeat;
@@ -732,11 +732,14 @@ section{
     transform:translateY(0);
 }
 @keyframes burst{
-    from{
+    0%{
         opacity:1;
         transform:translate(0,0) scale(1);
     }
-    to{
+    80%{
+        opacity:1;
+    }
+    100%{
         opacity:0;
         transform:translate(var(--x),var(--y)) scale(2);
     }
@@ -749,7 +752,7 @@ section{
     z-index:100005;
     color:var(--gold);
     text-shadow:0 2px 6px rgba(0,0,0,.25);
-    animation:burst .9s ease-out forwards;
+    animation:burst 1.6s ease-out forwards;
     will-change:transform,opacity;
 }
 .burst-particle.rose{
@@ -2436,7 +2439,7 @@ function initializeScratchCard(wrapper) {
             fullyRevealed = true;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             canvas.style.pointerEvents = "none";
-            particleBurst(wrapper, "ph-smiley");
+            particleBurst(wrapper, "😂");
         }
     }
 
@@ -2476,7 +2479,7 @@ function initializeScratchCard(wrapper) {
 
 /* ---------- DATE SCRATCH CARDS ---------- */
 
-// iconClass is a Phosphor icon name, e.g. "ph-heart" or "ph-smiley"
+// iconClass can be a Phosphor icon name, e.g. "ph-heart" or a literal emoji like "😂"
 function particleBurst(originEl, iconClass, count = 22, extraClass = ""){
 
     const rect = originEl.getBoundingClientRect();
@@ -2487,7 +2490,12 @@ function particleBurst(originEl, iconClass, count = 22, extraClass = ""){
 
         const particle = document.createElement("span");
         particle.className = "burst-particle" + (extraClass ? " " + extraClass : "");
-        particle.innerHTML = `<i class="ph-fill ${iconClass}"></i>`;
+
+        if (/\p{Extended_Pictographic}/u.test(iconClass)) {
+            particle.textContent = iconClass;
+        } else {
+            particle.innerHTML = `<i class="ph-fill ${iconClass}"></i>`;
+        }
 
         const angle = Math.random() * Math.PI * 2;
         const distance = 55 + Math.random() * 90;
@@ -2499,7 +2507,7 @@ function particleBurst(originEl, iconClass, count = 22, extraClass = ""){
         particle.style.left = centerX + "px";
         particle.style.top = centerY + "px";
         particle.style.fontSize = (14 + Math.random() * 16) + "px";
-        particle.style.animationDuration = (0.7 + Math.random() * 0.5) + "s";
+        particle.style.animationDuration = (1.3 + Math.random() * 0.8) + "s";
 
         document.body.appendChild(particle);
         particle.addEventListener("animationend", () => particle.remove());
